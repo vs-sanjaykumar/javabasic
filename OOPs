@@ -1,0 +1,58 @@
+1)Write a Java program to create a class called "Person" with a name and age attribute. Create two instances of the "Person" class, set their attributes using the constructor, and print their name and age.
+
+class Person{
+  private String name;
+  private int age;
+  
+  public Person(String name,int age){
+    this.name=name;
+    this.age=age;
+  }
+  void getname(){
+    System.out.println(name);
+  }
+  void getage(){
+    System.out.println(age);
+  }
+  void setname(String name){
+    this.name=name;
+  }
+  void setage(int age){
+    this.age=age;
+  }
+}
+
+class Main{
+  public static void main(String []args){
+    Person p=new Person("sanjay",20);
+    Person pp=new Person("kumar",19);
+    p.getname();
+    pp.getname();
+    p.getage();
+    pp.getage();
+    pp.setname("suriya");
+    pp.getname();
+  }
+}
+
+2)Write a Java program to create a class called "Rectangle" with width and height attributes. Calculate the area and perimeter of the rectangle.
+
+
+
+class Rectangle{
+  int area(int l,int b){
+    return l*b;
+  }
+  int perimeter(int l,int b){
+    return 2*(l+b);
+  }
+}
+class Main{
+  public static void main(String []args){
+    Rectangle r=new Rectangle();
+    System.out.println(r.area(5,5));
+    System.out.println(r.perimeter(10,10));
+  }
+}
+
+3)
