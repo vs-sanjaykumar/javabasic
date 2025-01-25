@@ -113,5 +113,281 @@ class Main{
   }
 }
 
-5)
+5)Create an abstract class Shape with an abstract method area(). Implement this class in a Circle and Rectangle class to calculate their respective areas.
+
+abstract class Shape {
+    abstract double area();
+}
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double area() {
+        return length * width;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle(5);
+        Shape rectangle = new Rectangle(4, 6);
+        System.out.println(circle.area());
+        System.out.println(rectangle.area());
+    }
+}
+6.Create an abstract class Vehicle with methods start(), stop(), and fuelType(). Implement this in Car and Bike classes.
+
+abstract class Vehicle {
+    abstract void start();
+    abstract void stop();
+    abstract String fuelType();
+}
+
+class Car extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Car is starting");
+    }
+
+    @Override
+    void stop() {
+        System.out.println("Car is stopping");
+    }
+
+    @Override
+    String fuelType() {
+        return "Petrol or Diesel";
+    }
+}
+
+class Bike extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Bike is starting");
+    }
+
+    @Override
+    void stop() {
+        System.out.println("Bike is stopping");
+    }
+
+    @Override
+    String fuelType() {
+        return "Petrol";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle car = new Car();
+        Vehicle bike = new Bike();
+        car.start();
+        System.out.println(car.fuelType());
+        car.stop();
+
+        bike.start();
+        System.out.println( bike.fuelType());
+        bike.stop();
+    }
+}
+
+7.Create an abstract class Employee with a constructor to initialize name and id. Implement the class in Developer and Manager classes.
+
+abstract class Employee {
+    String name;
+    int id;
+
+    Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    abstract void workDetails();
+}
+
+class Developer extends Employee {
+    Developer(String name, int id) {
+        super(name, id);
+    }
+
+    @Override
+    void workDetails() {
+        System.out.println("Developer " + name + " (ID: " + id + ") works on coding.");
+    }
+}
+
+class Manager extends Employee {
+    Manager(String name, int id) {
+        super(name, id);
+    }
+
+    @Override
+    void workDetails() {
+        System.out.println("Manager " + name + " (ID: " + id + ") manages projects.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee dev = new Developer("Sanjay", 101);
+        Employee mgr = new Manager("Ravi", 102);
+
+        dev.workDetails();
+        mgr.workDetails();
+    }
+}
+
+8. Create an abstract class Bank with an abstract method interestRate() and a non-abstract method bankDetails(). Implement this class in SBI and HDFC.
+
+abstract class Bank {
+    abstract double interestRate();
+
+    void bankDetails() {
+        System.out.println("Welcome to our Bank!");
+    }
+}
+
+class SBI extends Bank {
+    @Override
+    double interestRate() {
+        return 6.5;
+    }
+}
+
+class HDFC extends Bank {
+    @Override
+    double interestRate() {
+        return 7.2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bank sbi = new SBI();
+        Bank hdfc = new HDFC();
+
+        sbi.bankDetails();
+        System.out.println("SBI Interest Rate: " + sbi.interestRate() + "%");
+
+        hdfc.bankDetails();
+        System.out.println("HDFC Interest Rate: " + hdfc.interestRate() + "%");
+    }
+}
+
+9.Create an interface Printable and an abstract class Document. Implement both in PDFDocument and WordDocument classes.
+interface Printable {
+    void print();
+}
+
+abstract class Document {
+    String title;
+
+    Document(String title) {
+        this.title = title;
+    }
+
+    abstract void open();
+}
+
+class PDFDocument extends Document implements Printable {
+    PDFDocument(String title) {
+        super(title);
+    }
+
+    @Override
+    void open() {
+        System.out.println("Opening PDF Document: " + title);
+    }
+
+    @Override
+    public void print() {
+        System.out.println("Printing PDF Document: " + title);
+    }
+}
+
+class WordDocument extends Document implements Printable {
+    WordDocument(String title) {
+        super(title);
+    }
+
+    @Override
+    void open() {
+        System.out.println("Opening Word Document: " + title);
+    }
+
+    @Override
+    public void print() {
+        System.out.println("Printing Word Document: " + title);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Printable pdf = new PDFDocument("Java Abstraction");
+        Printable word = new WordDocument("OOP Concepts");
+
+        ((Document) pdf).open();
+        pdf.print();
+
+        ((Document) word).open();
+        word.print();
+    }
+}
+
+10. Create an abstract class DataProcessor with a method processData() for handling different data types (e.g., String and Integer). Implement it in two classes.
+
+abstract class DataProcessor {
+    abstract void processData(Object data);
+}
+
+class StringProcessor extends DataProcessor {
+    @Override
+    void processData(Object data) {
+        if (data instanceof String) {
+            System.out.println("Processing String: " + data.toString().toUpperCase());
+        } else {
+            System.out.println("Invalid data for StringProcessor.");
+        }
+    }
+}
+
+class IntegerProcessor extends DataProcessor {
+    @Override
+    void processData(Object data) {
+        if (data instanceof Integer) {
+            System.out.println("Processing Integer: " + ((Integer) data * 2));
+        } else {
+            System.out.println("Invalid data for IntegerProcessor.");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DataProcessor stringProcessor = new StringProcessor();
+        DataProcessor integerProcessor = new IntegerProcessor();
+
+        stringProcessor.processData("hello");
+        integerProcessor.processData(42);
+    }
+}
 
