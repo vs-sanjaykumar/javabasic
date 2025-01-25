@@ -1,0 +1,365 @@
+1.Create a class Animal with a method eat(). Derive a class Mammal with a method walk(). 
+Further, derive a class Dog with a method bark(). Demonstrate all methods through an object of Dog.
+
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating.");
+    }
+}
+
+class Mammal extends Animal {
+    void walk() {
+        System.out.println("Mammal is walking.");
+    }
+}
+
+class Dog extends Mammal {
+    void bark() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.walk();
+        dog.bark();
+    }
+}
+
+2. Create a class Person with a method showDetails(). Derive two classes Student and Teacher from Person. 
+Add specific methods study() and teach() in them, respectively. Demonstrate their usage.
+
+class Person {
+    void showDetails() {
+        System.out.println("This is a person.");
+    }
+}
+
+class Student extends Person {
+    void study() {
+        System.out.println("Student is studying.");
+    }
+}
+
+class Teacher extends Person {
+    void teach() {
+        System.out.println("Teacher is teaching.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        Teacher teacher = new Teacher();
+
+        student.showDetails();
+        student.study();
+
+        teacher.showDetails();
+        teacher.teach();
+    }
+}
+3. Create a base class Vehicle with a constructor that accepts type.
+Derive a class Car with a constructor that also accepts model. Display both details using an object of Car.
+
+class Vehicle {
+    String type;
+
+    Vehicle(String type) {
+        this.type = type;
+    }
+}
+
+class Car extends Vehicle {
+    String model;
+
+    Car(String type, String model) {
+        super(type);
+        this.model = model;
+    }
+
+    void displayDetails() {
+        System.out.println("Type: " + type + ", Model: " + model);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Sedan", "Honda City");
+        car.displayDetails();
+    }
+}
+
+4. Create a base class Bank with a method getInterestRate(). 
+Override this method in SBI and HDFC classes. Demonstrate overriding using objects of these classes.
+
+class Bank {
+    double getInterestRate() {
+        return 0;
+    }
+}
+
+class SBI extends Bank {
+    @Override
+    double getInterestRate() {
+        return 6.5;
+    }
+}
+
+class HDFC extends Bank {
+    @Override
+    double getInterestRate() {
+        return 7.2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bank sbi = new SBI();
+        Bank hdfc = new HDFC();
+
+        System.out.println("SBI Interest Rate: " + sbi.getInterestRate());
+        System.out.println("HDFC Interest Rate: " + hdfc.getInterestRate());
+    }
+}
+
+5. Create a class Parent with a protected method displayMessage(). Access it through a derived class Child.
+
+class Parent {
+    protected void displayMessage() {
+        System.out.println("This is a protected message.");
+    }
+}
+
+class Child extends Parent {
+    void showMessage() {
+        displayMessage();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.showMessage();
+    }
+}
+
+6. Create a class Calculator with overloaded methods add() for two integers, three integers, and two doubles.
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        System.out.println("Sum of 2 integers: " + calc.add(5, 10));
+        System.out.println("Sum of 3 integers: " + calc.add(1, 2, 3));
+        System.out.println("Sum of 2 doubles: " + calc.add(5.5, 10.5));
+    }
+}
+
+7. Create a base class Animal with a method sound(). Override this method in Dog and Cat classes. Demonstrate polymorphism through an array of Animal.
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal[] animals = {new Dog(), new Cat()};
+
+        for (Animal animal : animals) {
+            animal.sound();
+        }
+    }
+}
+
+8. Create an abstract class Shape with a method draw(). Implement it in Circle and Square classes.
+
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a Circle.");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a Square.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle();
+        Shape square = new Square();
+
+        circle.draw();
+        square.draw();
+    }
+}
+
+9 . Create an interface Payment with a method makePayment(). Implement this interface in CreditCard and UPI classes.
+
+interface Payment {
+    void makePayment();
+}
+
+class CreditCard implements Payment {
+    @Override
+    public void makePayment() {
+        System.out.println("Payment made using Credit Card.");
+    }
+}
+
+class UPI implements Payment {
+    @Override
+    public void makePayment() {
+        System.out.println("Payment made using UPI.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Payment payment1 = new CreditCard();
+        Payment payment2 = new UPI();
+
+        payment1.makePayment();
+        payment2.makePayment();
+    }
+}
+
+10 . Design a system where multiple file formats (TextFile, ImageFile, and AudioFile) are handled polymorphically. 
+Create a base class File with methods open(), read(), and close(). Implement these methods differently for each file type. 
+Demonstrate polymorphism by using a list of different file objects and processing them uniformly.
+
+import java.util.ArrayList;
+import java.util.List;
+
+abstract class File {
+    String fileName;
+
+    File(String fileName) {
+        this.fileName = fileName;
+    }
+
+    abstract void open();
+    abstract void read();
+    abstract void close();
+}
+
+class TextFile extends File {
+    TextFile(String fileName) {
+        super(fileName);
+    }
+
+    @Override
+    void open() {
+        System.out.println("Opening text file: " + fileName);
+    }
+
+    @Override
+    void read() {
+        System.out.println("Reading text file: " + fileName);
+    }
+
+    @Override
+    void close() {
+        System.out.println("Closing text file: " + fileName);
+    }
+}
+
+class ImageFile extends File {
+    ImageFile(String fileName) {
+        super(fileName);
+    }
+
+    @Override
+    void open() {
+        System.out.println("Opening image file: " + fileName);
+    }
+
+    @Override
+    void read() {
+        System.out.println("Displaying image file: " + fileName);
+    }
+
+    @Override
+    void close() {
+        System.out.println("Closing image file: " + fileName);
+    }
+}
+
+class AudioFile extends File {
+    AudioFile(String fileName) {
+        super(fileName);
+    }
+
+    @Override
+    void open() {
+        System.out.println("Opening audio file: " + fileName);
+    }
+
+    @Override
+    void read() {
+        System.out.println("Playing audio file: " + fileName);
+    }
+
+    @Override
+    void close() {
+        System.out.println("Closing audio file: " + fileName);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<File> files = new ArrayList<>();
+        files.add(new TextFile("document.txt"));
+        files.add(new ImageFile("photo.jpg"));
+        files.add(new AudioFile("song.mp3"));
+
+        for (File file : files) {
+            file.open();
+            file.read();
+            file.close();
+            System.out.println(); // Blank line for separation
+        }
+    }
+}
+
+
