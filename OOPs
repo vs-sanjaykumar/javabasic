@@ -35,6 +35,14 @@ class Main{
   }
 }
 
+output
+sanjay
+kumar
+20
+19
+suriya
+
+
 2)Write a Java program to create a class called "Rectangle" with width and height attributes. Calculate the area and perimeter of the rectangle.
 
 
@@ -54,6 +62,11 @@ class Main{
     System.out.println(r.perimeter(10,10));
   }
 }
+
+output
+25
+40
+
 
 3)Write a Java program to create a class called "Dog" with a name and breed attribute. Create two instances of the "Dog" class,
 set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.
@@ -93,6 +106,14 @@ class Main{
   }
 }
 
+output
+good
+bad
+puppy
+labrador
+ninja
+
+
 4)Write a Java program to create a class called "Circle" with a radius attribute.
 You can access and modify this attribute. Calculate the area and circumference of the circle.
 
@@ -112,6 +133,11 @@ class Main{
     System.out.println(c.perimeter(10));
   }
 }
+
+output
+25
+62.800000000000004
+
 
 5)Create an abstract class Shape with an abstract method area(). Implement this class in a Circle and Rectangle class to calculate their respective areas.
 
@@ -154,6 +180,13 @@ public class Main {
         System.out.println(rectangle.area());
     }
 }
+
+output
+
+78.53981633974483
+24.0
+
+
 6.Create an abstract class Vehicle with methods start(), stop(), and fuelType(). Implement this in Car and Bike classes.
 
 abstract class Vehicle {
@@ -210,6 +243,15 @@ public class Main {
     }
 }
 
+output
+Car is starting
+Petrol or Diesel
+Car is stopping
+Bike is starting
+Petrol
+Bike is stopping
+
+
 7.Create an abstract class Employee with a constructor to initialize name and id. Implement the class in Developer and Manager classes.
 
 abstract class Employee {
@@ -256,6 +298,12 @@ public class Main {
     }
 }
 
+output
+
+Developer Sanjay (ID: 101) works on coding.
+Manager Ravi (ID: 102) manages projects.
+
+
 8. Create an abstract class Bank with an abstract method interestRate() and a non-abstract method bankDetails(). Implement this class in SBI and HDFC.
 
 abstract class Bank {
@@ -292,6 +340,13 @@ public class Main {
         System.out.println("HDFC Interest Rate: " + hdfc.interestRate() + "%");
     }
 }
+
+output
+Welcome to our Bank!
+SBI Interest Rate: 6.5%
+Welcome to our Bank!
+HDFC Interest Rate: 7.2%
+
 
 9.Create an interface Printable and an abstract class Document. Implement both in PDFDocument and WordDocument classes.
 interface Printable {
@@ -353,6 +408,14 @@ public class Main {
     }
 }
 
+output
+
+Opening PDF Document: Java Abstraction
+Printing PDF Document: Java Abstraction
+Opening Word Document: OOP Concepts
+Printing Word Document: OOP Concepts
+
+
 10. Create an abstract class DataProcessor with a method processData() for handling different data types (e.g., String and Integer). Implement it in two classes.
 
 abstract class DataProcessor {
@@ -390,4 +453,10 @@ public class Main {
         integerProcessor.processData(42);
     }
 }
+
+output
+
+Processing String: HELLO
+Processing Integer: 84
+
 
