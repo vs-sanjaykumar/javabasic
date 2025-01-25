@@ -28,6 +28,11 @@ public class Main {
     }
 }
 
+output
+Animal is eating.
+Mammal is walking.
+Dog is barking.
+
 2. Create a class Person with a method showDetails(). Derive two classes Student and Teacher from Person. 
 Add specific methods study() and teach() in them, respectively. Demonstrate their usage.
 
@@ -61,6 +66,14 @@ public class Main {
         teacher.teach();
     }
 }
+
+output
+
+This is a person.
+Student is studying.
+This is a person.
+Teacher is teaching.
+
 3. Create a base class Vehicle with a constructor that accepts type.
 Derive a class Car with a constructor that also accepts model. Display both details using an object of Car.
 
@@ -91,6 +104,11 @@ public class Main {
         car.displayDetails();
     }
 }
+
+output
+
+Type: Sedan, Model: Honda City
+
 
 4. Create a base class Bank with a method getInterestRate(). 
 Override this method in SBI and HDFC classes. Demonstrate overriding using objects of these classes.
@@ -125,6 +143,12 @@ public class Main {
     }
 }
 
+output
+
+SBI Interest Rate: 6.5
+HDFC Interest Rate: 7.2
+
+
 5. Create a class Parent with a protected method displayMessage(). Access it through a derived class Child.
 
 class Parent {
@@ -145,6 +169,11 @@ public class Main {
         child.showMessage();
     }
 }
+
+output
+
+This is a protected message.
+
 
 6. Create a class Calculator with overloaded methods add() for two integers, three integers, and two doubles.
 
@@ -171,6 +200,12 @@ public class Main {
         System.out.println("Sum of 2 doubles: " + calc.add(5.5, 10.5));
     }
 }
+
+output
+Sum of 2 integers: 15
+Sum of 3 integers: 6
+Sum of 2 doubles: 16.0
+
 
 7. Create a base class Animal with a method sound(). Override this method in Dog and Cat classes. Demonstrate polymorphism through an array of Animal.
 
@@ -204,6 +239,11 @@ public class Main {
     }
 }
 
+output
+Dog barks.
+Cat meows.
+
+
 8. Create an abstract class Shape with a method draw(). Implement it in Circle and Square classes.
 
 abstract class Shape {
@@ -234,6 +274,11 @@ public class Main {
     }
 }
 
+output
+Drawing a Circle.
+Drawing a Square.
+
+
 9 . Create an interface Payment with a method makePayment(). Implement this interface in CreditCard and UPI classes.
 
 interface Payment {
@@ -263,6 +308,11 @@ public class Main {
         payment2.makePayment();
     }
 }
+
+output
+Payment made using Credit Card.
+Payment made using UPI.
+
 
 10 . Design a system where multiple file formats (TextFile, ImageFile, and AudioFile) are handled polymorphically. 
 Create a base class File with methods open(), read(), and close(). Implement these methods differently for each file type. 
@@ -361,5 +411,20 @@ public class Main {
         }
     }
 }
+
+output
+
+Opening text file: document.txt
+Reading text file: document.txt
+Closing text file: document.txt
+
+Opening image file: photo.jpg
+Displaying image file: photo.jpg
+Closing image file: photo.jpg
+
+Opening audio file: song.mp3
+Playing audio file: song.mp3
+Closing audio file: song.mp3
+
 
 
